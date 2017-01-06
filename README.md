@@ -1,5 +1,5 @@
 # samplecode-dl
-----------
+
 Shell tools for downloading and updating Apple developer samplecodes
 
 `download.sh` for full download
