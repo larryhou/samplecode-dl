@@ -84,7 +84,7 @@ function dojob()
 
 export -f dojob
 
-cat n.txt o.txt | sort | uniq -d | sed '1,2d'> d.txt
+cat n.txt o.txt | sort | uniq -d > d.txt
 cat d.txt n.txt | sort | uniq -u | awk '{print $1}' | while read ref
 do
 	echo "${data}" | jq -r ".documents|map(select(.[${id}]==\"${ref}\")|[.[${date}],.[${link}]]|join(\"|\"))|join(\"\n\")" | awk -F'|' '{system("dojob "$1" "$2)}'
