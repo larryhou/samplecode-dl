@@ -23,7 +23,7 @@ function dojob()
 		mkdir -pv ${dir}
 	fi
 	link=${location}/$(curl -s ${location}/book.json | jq -r '.sampleCode')
-	echo "wget ${link} -O ${dir}/$(echo ${link} | awk -F'/' '{print $NF}')"
+	wget ${link} -O ${dir}/$(echo ${link} | awk -F'/' '{print $NF}')
 }
 
 export -f dojob
